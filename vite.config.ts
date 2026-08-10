@@ -5,8 +5,8 @@ import path from 'node:path'
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig({
-  // Nome del repository GitHub: https://pcsumisura.github.io/PCSuMisura-Sito/
-  base: '/PCSuMisura-Sito/',
+  // Dominio custom: il sito vive alla radice (pcsumisura.net/), non in un sottopercorso
+  base: '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
