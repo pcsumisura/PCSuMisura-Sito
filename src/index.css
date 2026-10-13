@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: #07070f;
+  --color-foreground: #f0f0f5;
+  --color-card: #0f0f1a;
+  --color-card-foreground: #e8e8f0;
+  --color-primary: #2b7fff;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #14141f;
+  --color-secondary-foreground: #a0a0b8;
+  --color-muted: #1a1a2a;
+  --color-muted-foreground: #6b6b88;
+  --color-accent: #3b8dff;
+  --color-accent-foreground: #ffffff;
+  --color-border: rgba(255,255,255,0.07);
+  --color-ring: #2b7fff;
+  --radius: 0.75rem;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #07070f;
+  color: #f0f0f5;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #07070f; }
+::-webkit-scrollbar-thumb { background: #2b7fff44; border-radius: 3px; }
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px #2b7fff44, 0 0 40px #2b7fff22; }
+  50%       { box-shadow: 0 0 30px #2b7fff66, 0 0 60px #2b7fff33; }
+}
+
+.animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
+.animate-fade-in { animation: fadeIn 1s ease forwards; }
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* ── Typography ─────────────────────────────────────────────── */
+.font-display { font-family: 'Outfit', sans-serif; }
+
+.glow-blue { text-shadow: 0 0 40px #2b7fff88; }
+
+/* ── Base components ────────────────────────────────────────── */
+.card-glass {
+  background: rgba(15,15,26,0.8);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+}
+
+.btn-primary {
+  background: #2b7fff;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: pulse-glow 3s ease-in-out infinite;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: #4090ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px #2b7fff55;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #f0f0f5;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  border-color: #2b7fff;
+  color: #2b7fff;
+  background: rgba(43,127,255,0.08);
+  transform: translateY(-2px);
+}
+
+/* ── Decorative ─────────────────────────────────────────────── */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43,127,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(43,127,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,127,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+}
+
+.number-badge {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1;
+  background: linear-gradient(135deg, #2b7fff, #88bbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Interactive ────────────────────────────────────────────── */
+.service-card { transition: all 0.35s ease; }
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(43,127,255,0.3);
+  box-shadow: 0 20px 60px rgba(43,127,255,0.12);
+}
+
+.portfolio-card:hover .portfolio-overlay { opacity: 1; }
+.portfolio-card:hover img { transform: scale(1.05); }
+.portfolio-card img { transition: transform 0.5s ease; }
+.portfolio-overlay { opacity: 0; transition: opacity 0.35s ease; }
+
+/* ── Layout grids (responsive) ──────────────────────────────── */
+
+/* 2-col hero / side-by-side */
+.rg-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* 2-col service cards */
+.rg-cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* 3-col feature / why-us cards */
+.rg-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* 4-col process timeline */
+.rg-steps-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* 3-col upgrade cards */
+.rg-upgrade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* footer 3-col */
+.rg-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* repair card: image left, text right */
+.rg-repair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* ── Section spacing ────────────────────────────────────────── */
+.section-pad { padding: 7rem 2rem; }
+.section-pad-sm { padding: 5rem 2rem; }
+
+/* ── Mobile: max-width 768px ────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* All multi-col grids → single column */
+  .rg-2,
+  .rg-cards-2,
+  .rg-cards-3,
+  .rg-steps-4,
+  .rg-upgrade,
+  .rg-footer,
+  .rg-repair {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .rg-2    { gap: 2rem; }
+  .rg-footer { gap: 1.5rem; }
+
+  /* Section padding */
+  .section-pad    { padding: 4rem 1.25rem; }
+  .section-pad-sm { padding: 3rem 1.25rem; }
+
+  /* Process steps: restore gap after col collapse */
+  .rg-steps-4 { gap: 1.5rem; }
+
+  /* Upgrade grid: 2-col on tablet, 1-col on phone */
+  .rg-upgrade { grid-template-columns: 1fr; }
+
+  /* Process connector line: hide on mobile */
+  .process-connector { display: none !important; }
+
+  /* CTAs: stack full-width */
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-row > * { width: 100%; justify-content: center; text-align: center; }
+
+  /* Buttons: slightly smaller on mobile */
+  .btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.93rem;
+  }
+
+  /* Trust bar: tighter */
+  .trust-bar { gap: 1.5rem !important; }
+
+  /* Hero image: shorter on mobile */
+  .hero-img { height: 240px !important; }
+
+  /* Repair card image */
+  .repair-img { height: 200px !important; }
+
+  /* Navbar: hide desktop links, show hamburger */
+  .nav-desktop { display: none !important; }
+  .nav-cta-phone { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+
+  /* Component tabs: smaller padding */
+  .comp-tabs button { padding: 0.65rem 0.75rem !important; }
+}
+
+/* Hamburger hidden on desktop */
+.nav-hamburger { display: none; }
+
+/* ── Tablet: 769–1024px ────────────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .rg-cards-3 { grid-template-columns: repeat(2, 1fr); }
+  .rg-steps-4 { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .rg-upgrade { grid-template-columns: repeat(2, 1fr); }
+  .rg-footer  { grid-template-columns: 1fr 1fr; }
+  .section-pad    { padding: 5rem 1.75rem; }
+  .section-pad-sm { padding: 3.5rem 1.75rem; }
+  .process-connector { display: none !important; }
+}
