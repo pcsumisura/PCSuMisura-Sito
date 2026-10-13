@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PC su Misura | Quanto della tua vita hai perso aspettando che il PC si carichi?</title>
+<link rel="canonical" href="https://pcsumisura.net/lan2/">
+<meta name="description" content="PC su misura, upgrade, pulizia e pasta termica, Wi-Fi, console e assistenza remota per privati e gamer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0a08;
+  --surface:#171210;
+  --line:#2e221b;
+  --text:#fff4ec;
+  --muted:#b09c8e;
+  --orange:#ff6b1a;
+  --soft:#ff9a5a;
+  --red:#ff4545;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;font-size:17px;
+  background-image:radial-gradient(circle at 15% 0%,rgba(255,107,26,.12),transparent 40%)}
+h1,h2,h3{font-family:Outfit,Inter,sans-serif;letter-spacing:-.04em;line-height:1.05;margin:0 0 .5em;font-weight:700}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h3{font-size:1.25rem;letter-spacing:-.02em;line-height:1.2}
+p{margin:0 0 1em}
+.hl{color:var(--orange)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+section{padding:84px 0}
+.sub{color:var(--muted);font-size:1.12rem;max-width:56ch}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--soft);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(13,10,8,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:Outfit,sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.04em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.logo i{color:var(--orange);font-style:normal}
+nav{display:flex;gap:28px}
+nav a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:500}
+nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#1a0c04;padding:14px 26px;border-radius:10px;text-decoration:none;font-family:Outfit,sans-serif;font-weight:700;letter-spacing:-.02em;font-size:1rem;border:1px solid var(--orange);box-shadow:0 0 28px rgba(255,107,26,.4);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 42px rgba(255,107,26,.65)}
+.btn.sm{padding:10px 18px;font-size:.92rem}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--soft);box-shadow:none}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+
+.hero{padding:90px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.pill{display:inline-block;border:1px solid var(--line);color:var(--soft);padding:6px 14px;border-radius:99px;font-size:.82rem;letter-spacing:.04em;margin-bottom:22px;background:rgba(255,107,26,.08)}
+
+.load{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 10px rgba(255,107,26,.06)}
+.load .row{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.load .row b{color:var(--red);font-weight:600}
+.load .t{font-family:Outfit,sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:-.03em;margin-bottom:18px}
+.bar{height:14px;border-radius:99px;background:#241a14;overflow:hidden}
+.bar i{display:block;height:100%;width:99%;background:linear-gradient(90deg,var(--orange),var(--soft));border-radius:99px;animation:crawl 4s ease-out infinite}
+@keyframes crawl{0%{width:6%}70%{width:97%}100%{width:99%}}
+.load .pct{display:flex;justify-content:space-between;margin-top:12px;font-size:.9rem;color:var(--muted)}
+.load .cap{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);color:var(--soft);font-weight:500}
+
+.band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--orange);transform:translateY(-3px)}
+.band .card{background:var(--bg)}
+.card h3{margin-bottom:.4em}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+.big{font-family:Outfit,sans-serif;font-size:1.7rem;letter-spacing:-.03em;font-weight:600;margin-top:40px;max-width:30ch}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;display:flex;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:Outfit,sans-serif;font-weight:800;font-size:1.8rem;color:var(--orange);line-height:1;min-width:30px}
+.steps b{display:block;font-family:Outfit,sans-serif;font-size:1.15rem;letter-spacing:-.02em;margin-bottom:2px}
+.steps span{color:var(--muted);font-size:.95rem}
+
+.cta{text-align:center;padding:110px 0;position:relative}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,107,26,.22),transparent 65%);pointer-events:none}
+.cta .wrap{position:relative}
+.cta .sub{margin:0 auto 1em}
+.cta .btns{justify-content:center}
+.cta .meta{color:var(--muted);margin-top:26px;font-size:.95rem}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-family:Outfit,sans-serif;font-size:1.2rem;font-weight:600;letter-spacing:-.02em}
+details p{color:var(--muted);margin:10px 0 0}
+.fine{color:var(--muted);font-size:.82rem;margin-top:18px}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+
+@media (max-width:960px){
+  nav{display:none}
+  .hero-grid,.two{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  section{padding:64px 0}
+}
+@media (max-width:560px){.cards{grid-template-columns:1fr}body{font-size:16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{animation:none}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="/"><span>PC su Misura<i>.</i></span></a>
+    <nav aria-label="Principale">
+      <a href="#problemi">Ti suona familiare?</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#faq">Domande</a>
+    </nav>
+    <a class="btn sm" href="#contatti">Chiedi un preventivo</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">Computer · Console · Wi-Fi · Elettronica</span>
+      <h1>Quanto della tua vita hai perso <span class="hl">aspettando che il PC si carichi?</span></h1>
+      <p class="sub">Siamo PC su Misura. Costruiamo, ripariamo, potenziamo e puliamo computer e console, e sistemiamo la tecnologia di casa tua, perché torni a usarla invece di combatterci.</p>
+      <div class="btns">
+        <a class="btn" href="mailto:pcsumisura.info@gmail.com?subject=Richiesta%20preventivo&body=Buongiorno%2C%20vorrei%20un%20preventivo.%0A%0ACosa%20non%20va%20(o%20cosa%20vorrei)%3A%0A%0ANome%3A%0ATelefono%3A">Chiedi un preventivo &rarr;</a>
+        <a class="btn ghost" href="#servizi">Guarda cosa facciamo</a>
+      </div>
+    </div>
+    <div class="load" aria-hidden="true">
+      <div class="row"><span>Il tuo PC, oggi</span><b>Temperatura alta</b></div>
+      <div class="t">Avvio in corso&hellip;</div>
+      <div class="bar"><i></i></div>
+      <div class="pct"><span>Ancora qualche minuto</span><span>99%</span></div>
+      <p class="cap">Se ti ricorda qualcosa, ne parliamo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="problemi">
+  <div class="wrap">
+    <h2>Ti suona <span class="hl">familiare</span>?</h2>
+    <div class="cards">
+      <div class="card"><h3>Si accende in una vita</h3><p>Premi il tasto, vai a farti un caffè, e quando torni sta ancora pensando.</p></div>
+      <div class="card"><h3>Le ventole sembrano un aereo</h3><p>Rumore, calore e quella sensazione che prima o poi qualcosa si rompa.</p></div>
+      <div class="card"><h3>I giochi scattano</h3><p>Il momento decisivo arriva, e il gioco si impalla. Sempre.</p></div>
+      <div class="card"><h3>Il Wi-Fi sparisce</h3><p>Nella stanza dove ti serve, ovviamente. Quella in fondo alla casa.</p></div>
+    </div>
+    <p class="big">Non devi più sopportarlo. Quasi tutto si può sistemare.</p>
+  </div>
+</section>
+
+<section id="servizi">
+  <div class="wrap">
+    <h2>Cosa possiamo fare <span class="hl">per te</span>.</h2>
+    <p class="sub">Dal PC dei tuoi sogni alla console che scalda troppo. Se ha dentro un chip, probabilmente ce ne occupiamo noi.</p>
+    <div class="cards">
+      <div class="card"><h3>PC su misura</h3><p>Lo costruiamo noi, in base a come lo usi: gaming, lavoro, studio o creatività.</p></div>
+      <div class="card"><h3>Upgrade hardware</h3><p>Più memoria, disco più veloce, scheda video nuova. Rimetti in forma il PC che hai.</p></div>
+      <div class="card"><h3>Pulizia di PC e console</h3><p>Polvere, sporco e software pesante tolti da dentro e da fuori, per macchine più fresche e silenziose.</p></div>
+      <div class="card"><h3>Pasta termica</h3><p>Sostituzione della pasta termica per tenere sotto controllo le temperature.</p></div>
+      <div class="card"><h3>Modding Nintendo Switch</h3><p>Personalizza la tua console con interventi fatti da chi sa dove mettere le mani.</p></div>
+      <div class="card"><h3>Wi-Fi che funziona</h3><p>Copertura sistemata in tutta la casa, dalla cantina alla camera in fondo.</p></div>
+      <div class="card"><h3>PC nuovi e rigenerati</h3><p>Computer nuovi o usati selezionati, per spendere il giusto.</p></div>
+      <div class="card"><h3>Assistenza remota</h3><p>Un problema al software? Ci colleghiamo da remoto e lo risolviamo senza muoverti da casa.</p></div>
+    </div>
+    <p class="fine">Il modding può far decadere la garanzia del produttore: ti spieghiamo sempre cosa comporta prima di iniziare.</p>
+  </div>
+</section>
+
+<section class="band" id="come-funziona">
+  <div class="wrap two">
+    <div>
+      <h2>Cambiare PC non è <span class="hl">sempre</span> la risposta.</h2>
+      <p class="sub">A volte basta una pulizia, un disco nuovo o un po' di memoria in più. Ti diciamo sinceramente cosa serve davvero, anche se significa spendere meno.</p>
+    </div>
+    <ol class="steps">
+      <li><div><b>Raccontaci il problema</b><span>Scrivici o chiamaci e spiegaci cosa non va, anche a parole tue.</span></div></li>
+      <li><div><b>Ti diciamo cosa serve e quanto costa</b><span>Preventivo chiaro prima di iniziare, senza sorprese.</span></div></li>
+      <li><div><b>Sistemiamo e torni a usarlo</b><span>Ti riconsegniamo il tuo computer, la console o la rete che funzionano come dovrebbero.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta" id="contatti">
+  <div class="wrap">
+    <h2>Smetti di aspettare. <span class="hl">Facci vedere il problema.</span></h2>
+    <p class="sub">Raccontaci cosa non va con il tuo PC, la tua console o il tuo Wi-Fi. Ti rispondiamo e ti diciamo come risolverlo.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:pcsumisura.info@gmail.com?subject=Richiesta%20preventivo&body=Buongiorno%2C%20vorrei%20un%20preventivo.%0A%0ACosa%20non%20va%20(o%20cosa%20vorrei)%3A%0A%0ANome%3A%0ATelefono%3A">Chiedi un preventivo &rarr;</a>
+      <a class="btn ghost" href="tel:+393756708997">Chiama +39 3756708997</a>
+      <a class="btn ghost" href="https://wa.me/393756708997?text=Ciao%2C%20vorrei%20un%20preventivo%20da%20PC%20su%20Misura." target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+    </div>
+    <p class="meta"><a href="mailto:pcsumisura.info@gmail.com" style="color:inherit">pcsumisura.info@gmail.com</a></p>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap" style="max-width:820px">
+    <h2>Domande frequenti</h2>
+    <details><summary>Il mio PC è vecchio. Vale la pena sistemarlo?</summary><p>Dipende. Spesso un upgrade e una pulizia lo fanno rinascere. Se non conviene, te lo diciamo chiaramente.</p></details>
+    <details><summary>Quanto costa?</summary><p>Dipende dal lavoro. Ti diciamo il prezzo prima di iniziare, così sai già cosa spendi.</p></details>
+    <details><summary>Posso farmi aiutare senza portare il PC?</summary><p>Per i problemi di software sì, con l'assistenza remota. Per pulizie e componenti serve intervenire sul dispositivo.</p></details>
+    <details><summary>Fate anche PC da gaming?</summary><p>Certo. Costruiamo PC su misura per giocare, con componenti scelti in base al tuo budget e ai giochi che usi.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">PC su Misura &middot; P.IVA 04014600128 &middot; <a href="mailto:pcsumisura.info@gmail.com" style="color:inherit">pcsumisura.info@gmail.com</a> &middot; <a href="tel:+393756708997" style="color:inherit">+39 3756708997</a> &middot; <a href="/" style="color:inherit">Vai al sito completo</a></div>
+</footer>
+
+</body>
+</html>
