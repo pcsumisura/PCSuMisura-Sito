@@ -132,7 +132,7 @@ function Navbar({ onNavigate }: { onNavigate: (p: Page) => void }) {
             Computer
           </button>
           <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.75rem' }}>
-            <a href="tel:+393756708997" className="btn-secondary" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+            <a href="tel:+39 0331 1090522" className="btn-secondary" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none' }}>
               <IconPhone /> Chiamaci
             </a>
             <button onClick={() => { scrollToCta(); setOpen(false) }} style={{ flex: 1, background: GREEN, color: '#fff', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', border: 'none', borderRadius: '0.5rem', cursor: 'pointer', padding: '0.8rem 1rem' }}>
