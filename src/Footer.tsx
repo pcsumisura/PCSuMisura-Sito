@@ -51,7 +51,7 @@ export default function Footer({ onNavigate, accent = '#2b7fff' }: FooterProps) 
               Progettiamo e assembliamo PC personalizzati per ogni esigenza. Dalla consulenza alla consegna a domicilio.
             </p>
             <a href="tel:+393756708997" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.88rem', color: accent, textDecoration: 'none', marginBottom: '0.45rem' }}>
-              <IconPhone /> +39 375 670 8997
+              <IconPhone /> +39 0331 1090522
             </a>
             <a href="mailto:pcsumisura.info@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.88rem', color: accent, textDecoration: 'none' }}>
               <IconMail /> pcsumisura.info@gmail.com
