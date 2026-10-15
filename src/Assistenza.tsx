@@ -107,7 +107,7 @@ function Navbar({ onNavigate }: { onNavigate: (p: Page) => void }) {
         </div>
 
         <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
-          <a href="tel:+393311090522" className="nav-cta-phone" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.85rem', color: GREEN, textDecoration: 'none' }}>
+          <a href="tel:+3903311090522" className="nav-cta-phone" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.85rem', color: GREEN, textDecoration: 'none' }}>
             <IconPhone /> Chiamaci
           </a>
           <button className="btn-primary" onClick={scrollToCta} style={{ fontSize: '0.83rem', padding: '0.58rem 1.15rem', background: GREEN, animation: 'none', boxShadow: `0 0 20px ${GREEN}44` }}>
@@ -132,7 +132,7 @@ function Navbar({ onNavigate }: { onNavigate: (p: Page) => void }) {
             Computer
           </button>
           <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.75rem' }}>
-            <a href="tel:+393311090522" className="btn-secondary" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+            <a href="tel:+3903311090522" className="btn-secondary" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', textDecoration: 'none' }}>
               <IconPhone /> Chiamaci
             </a>
             <button onClick={() => { scrollToCta(); setOpen(false) }} style={{ flex: 1, background: GREEN, color: '#fff', fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', border: 'none', borderRadius: '0.5rem', cursor: 'pointer', padding: '0.8rem 1rem' }}>
@@ -178,7 +178,7 @@ function Hero() {
             >
               Richiedi assistenza <IconArrow />
             </button>
-            <a href="tel:+393311090522" className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none' }}>
+            <a href="tel:+3903311090522" className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none' }}>
               <IconPhone /> Parla con un tecnico
             </a>
           </div>
@@ -441,11 +441,11 @@ function CtaSection() {
               Descrivi il problema e ti aiutiamo subito. Diagnosi sempre gratuita, preventivo chiaro prima di qualsiasi intervento.
             </p>
             <div className="cta-row" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+393311090522" style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', background: `rgba(16,185,129,0.1)`, border: `1px solid rgba(16,185,129,0.35)`, borderRadius: '0.5rem', padding: '0.9rem 1.75rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#fff', textDecoration: 'none', transition: 'all 0.25s ease' }}
+              <a href="tel:+3903311090522" style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', background: `rgba(16,185,129,0.1)`, border: `1px solid rgba(16,185,129,0.35)`, borderRadius: '0.5rem', padding: '0.9rem 1.75rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#fff', textDecoration: 'none', transition: 'all 0.25s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.2)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.1)'; e.currentTarget.style.transform = 'none' }}
               >
-                <IconPhone /> +39 331 109 0522
+                <IconPhone /> +39 0331 109 0522
               </a>
               <a href="mailto:pcsumisura.info@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', background: `rgba(16,185,129,0.1)`, border: `1px solid rgba(16,185,129,0.35)`, borderRadius: '0.5rem', padding: '0.9rem 1.75rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#fff', textDecoration: 'none', transition: 'all 0.25s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(16,185,129,0.2)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
