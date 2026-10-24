@@ -30,6 +30,7 @@ export default function Footer({ onNavigate, accent = '#2b7fff' }: FooterProps) 
   const landingLinks: { label: string; href: string }[] = [
     { label: 'Per le aziende', href: '/lan1/' },
     { label: 'Per i privati', href: '/lan2/' },
+    { label: 'Privacy e cookie', href: '/privacy/' },
   ]
 
   return (
