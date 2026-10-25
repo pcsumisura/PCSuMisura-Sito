@@ -5,7 +5,7 @@
    Finche' sono vuoti non viene caricato nessuno script di terze parti. */
 (function () {
   var GA_ID = '';
-  var ADS_ID = '';
+  var ADS_ID = 'AW-18516853027';
 
   var KEY = 'pcsm_consent';
   var MAX_AGE = 1000 * 60 * 60 * 24 * 180; // 6 mesi

@@ -532,8 +532,80 @@ function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
 }
 
 // ── Router ─────────────────────────────────────────────────────
+const PAGE_PATHS: Record<Page, string> = {
+  home: '/',
+  computer: '/computer/',
+  assistenza: '/assistenza/',
+}
+
+const PAGE_META: Record<Page, { title: string; description: string }> = {
+  home: {
+    title: 'PC su Misura | PC personalizzati e assistenza informatica',
+    description: 'Progettiamo e assembliamo PC personalizzati per ogni esigenza. Assistenza informatica per aziende e privati.',
+  },
+  computer: {
+    title: 'PC su misura, upgrade e componenti | PC su Misura',
+    description: 'PC assemblati su misura, nuovi o usati, upgrade hardware e componenti scelti in base a come li usi.',
+  },
+  assistenza: {
+    title: 'Assistenza informatica per aziende e privati | PC su Misura',
+    description: 'Assistenza informatica, reti, backup, sicurezza e gestione dei computer per aziende, studi e privati.',
+  },
+}
+
+function pageFromPath(pathname: string): Page {
+  const p = pathname.replace(/\/+$/, '')
+  if (p === '/computer') return 'computer'
+  if (p === '/assistenza') return 'assistenza'
+  return 'home'
+}
+
 export default function App() {
-  const [page, setPage] = useState<Page>('home')
+  const [page, setPageState] = useState<Page>(() => pageFromPath(window.location.pathname))
+
+  const setPage = (p: Page) => {
+    if (pageFromPath(window.location.pathname) !== p) {
+      window.history.pushState({}, '', PAGE_PATHS[p])
+    }
+    setPageState(p)
+  }
+
+  // Tasti avanti / indietro del browser
+  useEffect(() => {
+    const onPop = () => setPageState(pageFromPath(window.location.pathname))
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  // Titolo, descrizione e canonical per ogni pagina
+  useEffect(() => {
+    const meta = PAGE_META[page]
+    document.title = meta.title
+    let d = document.querySelector('meta[name="description"]')
+    if (!d) {
+      d = document.createElement('meta')
+      d.setAttribute('name', 'description')
+      document.head.appendChild(d)
+    }
+    d.setAttribute('content', meta.description)
+    let c = document.querySelector('link[rel="canonical"]')
+    if (!c) {
+      c = document.createElement('link')
+      c.setAttribute('rel', 'canonical')
+      document.head.appendChild(c)
+    }
+    c.setAttribute('href', 'https://pcsumisura.net' + PAGE_PATHS[page])
+  }, [page])
+
+  // Link con ancora, es. /computer/#componenti
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (!hash) return
+    const t = window.setTimeout(() => {
+      document.getElementById(hash)?.scrollIntoView()
+    }, 150)
+    return () => window.clearTimeout(t)
+  }, [page])
 
   if (page === 'computer') return <Computer onNavigate={setPage} />
   if (page === 'assistenza') return <Assistenza onNavigate={setPage} />
