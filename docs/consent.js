@@ -6,6 +6,8 @@
 (function () {
   var GA_ID = '';
   var ADS_ID = 'AW-18516853027';
+  // Conversione "Contatto" di Google Ads (clic su telefono, email, WhatsApp)
+  var ADS_CONVERSION = 'AW-18516853027/8XwkCOqL2aodEKOCw_1E';
 
   var KEY = 'pcsm_consent';
   var MAX_AGE = 1000 * 60 * 60 * 24 * 180; // 6 mesi
@@ -86,7 +88,10 @@
     var name = h.indexOf('tel:') === 0 ? 'click_telefono'
       : h.indexOf('mailto:') === 0 ? 'click_email'
       : h.indexOf('wa.me') !== -1 ? 'click_whatsapp' : '';
-    if (name) gtag('event', name, { link_url: h });
+    if (name) {
+      gtag('event', name, { link_url: h });
+      if (ADS_ID && ADS_CONVERSION) gtag('event', 'conversion', { send_to: ADS_CONVERSION });
+    }
   }, true);
 
   // ---------- Interfaccia ----------
